@@ -28,6 +28,9 @@ public class Weapon : MonoBehaviour
     public void StopRotate() 
         => _rotation = Vector3.zero;
 
+    public void AddAttackSpeed(float attackToAdd)
+        => speed += attackToAdd;
+
     public void FixedUpdate() 
         => transform.RotateAround(rotateAround.position, _rotation, Time.deltaTime * (speed * 100));
 }
