@@ -1,12 +1,11 @@
-﻿using System;
-using Unity.VisualScripting;
+﻿using Event;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
     [SerializeField] private Transform rotateAround;
-    [SerializeField] private float speed;
-    
+    [SerializeField] private WeaponConfig weaponConfig;
+
     private Vector3 _rotation = Vector3.zero;
     private Vector3 _startingPosition = Vector3.zero; 
 
@@ -28,9 +27,12 @@ public class Weapon : MonoBehaviour
     public void StopRotate() 
         => _rotation = Vector3.zero;
 
-    public void AddAttackSpeed(float attackToAdd)
-        => speed += attackToAdd;
-
+    public void AddAttackSpeed(ItemPickupEvent @event)
+        => weaponConfig.AddAttack(@event.Value);
+    
+    public void AddDamage(ItemPickupEvent @event)
+        => weaponConfig.AddDamage(@event.Value);
+    
     public void FixedUpdate() 
-        => transform.RotateAround(rotateAround.position, _rotation, Time.deltaTime * (speed * 100));
+        => transform.RotateAround(rotateAround.position, _rotation, Time.deltaTime * (weaponConfig.speed * 100));
 }

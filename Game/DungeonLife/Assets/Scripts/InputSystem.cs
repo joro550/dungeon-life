@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Event;
+using UnityEngine;
 
 public class InputSystem : MonoBehaviour
 {
