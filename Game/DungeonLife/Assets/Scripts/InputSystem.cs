@@ -1,14 +1,14 @@
-﻿using Event;
-using UnityEngine;
+﻿using UnityEngine;
+using Event.Events;
 
 public class InputSystem : MonoBehaviour
 {
     [Header("Mouse")]
-    [SerializeField] private GameEvent onLeftMouseDown;
-    [SerializeField] private GameEvent onLeftMouseUp;
+    [SerializeField] private VoidEvent onLeftMouseDown;
+    [SerializeField] private VoidEvent onLeftMouseUp;
     
-    [SerializeField] private GameEvent onRightMouseDown;
-    [SerializeField] private GameEvent onRightMouseUp;
+    [SerializeField] private VoidEvent onRightMouseDown;
+    [SerializeField] private VoidEvent onRightMouseUp;
 
     public void Update()
     {

@@ -1,5 +1,5 @@
-﻿using Event;
-using UnityEngine;
+﻿using UnityEngine;
+using Event.Events;
 
 public class Weapon : MonoBehaviour
 {
@@ -27,11 +27,11 @@ public class Weapon : MonoBehaviour
     public void StopRotate() 
         => _rotation = Vector3.zero;
 
-    public void AddAttackSpeed(ItemPickupEvent @event)
-        => weaponConfig.AddAttack(@event.Value);
+    public void AddAttackSpeed(int value)
+        => weaponConfig.AddAttack(value);
     
-    public void AddDamage(ItemPickupEvent @event)
-        => weaponConfig.AddDamage(@event.Value);
+    public void AddDamage(int value)
+        => weaponConfig.AddDamage(value);
     
     public void FixedUpdate() 
         => transform.RotateAround(rotateAround.position, _rotation, Time.deltaTime * (weaponConfig.speed * 100));

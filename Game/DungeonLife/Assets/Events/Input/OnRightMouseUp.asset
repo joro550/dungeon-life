@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2a30750570da6044ae39133b0791c17, type: 3}
-  m_Name: RightMouseUp
+  m_Script: {fileID: 11500000, guid: 1d5349d0915d41acbd9f2b203a35895c, type: 3}
+  m_Name: OnRightMouseUp
   m_EditorClassIdentifier: 

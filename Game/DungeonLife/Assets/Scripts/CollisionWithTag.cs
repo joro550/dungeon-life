@@ -1,5 +1,4 @@
-﻿using System;
-using Event;
+﻿using Event.Events;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,7 +6,7 @@ public class CollisionWithTag : MonoBehaviour
 {
     [SerializeField] private string onCollisionWith;
     [SerializeField] private UnityEvent onCollision;
-    [SerializeField] private GameEvent onCollisionEntered;
+    [SerializeField] private VoidEvent onCollisionEntered;
 
     private void OnCollisionEnter2D(Collision2D col)
     {
