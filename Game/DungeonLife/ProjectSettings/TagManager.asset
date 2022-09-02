@@ -49,9 +49,15 @@ TagManager:
   - name: Walls
     uniqueID: 2290356907
     locked: 0
+  - name: Ornaments
+    uniqueID: 3020364691
+    locked: 0
   - name: Items
     uniqueID: 2238510871
     locked: 0
   - name: Player
     uniqueID: 1103406363
+    locked: 0
+  - name: UI
+    uniqueID: 464222475
     locked: 0

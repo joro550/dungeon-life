@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Globalization;
+using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -10,4 +11,6 @@ public class EnemyHealth : MonoBehaviour
 
     public void RemoveHealth(WeaponConfig damageDoneEvent) 
         => current -= damageDoneEvent.damage;
+
+    public string GetValue() => current.ToString(CultureInfo.InvariantCulture);
 }

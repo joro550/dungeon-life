@@ -1,6 +1,5 @@
 ﻿using Event;
 using UnityEditor;
-using UnityEngine;
 
 namespace Editor
 {
