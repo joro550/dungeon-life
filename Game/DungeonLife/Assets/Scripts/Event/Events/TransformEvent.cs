@@ -3,9 +3,9 @@
 namespace Event.Events
 {
     [CreateAssetMenu(fileName = "Float Event", menuName = "Game Event/Float")]
-    public class FloatEvent : BaseGameEvent<float>
+    public class TransformEvent : BaseGameEvent<Transform>
     {
-        public float Value;
+        public Transform Value;
 
         public void Raise() => Raise(Value);
     }

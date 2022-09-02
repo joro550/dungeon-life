@@ -342,7 +342,6 @@ GameObject:
   - component: {fileID: 1650632065875906163}
   - component: {fileID: 1650632065875906162}
   - component: {fileID: 1650632065875906161}
-  - component: {fileID: 1650632065875906160}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -366,6 +365,7 @@ Transform:
   - {fileID: 1650632066001556191}
   - {fileID: 1650632064939639843}
   - {fileID: 1650632066119760147}
+  - {fileID: 6396473220596707069}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -439,35 +439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ec8cf0ceced4419b4f666e5a54aa76d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
---- !u!114 &1650632065875906160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1650632065875906165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e882bc90724847f885fe301cff39d5aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 91d63047d4d8c2546b207248489df88b, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1650632065729090450}
-        m_TargetAssemblyTypeName: Weapon, Assembly-CSharp
-        m_MethodName: AddAttackSpeed
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  speed: 5
 --- !u!1 &1650632066001556176
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,3 +708,92 @@ MonoBehaviour:
   onLeftMouseUp: {fileID: 11400000, guid: 0c4131f6d7109444aa1aad86b24f194e, type: 2}
   onRightMouseDown: {fileID: 11400000, guid: 3b8c9f27fdf66e140b3e47174d39b9fc, type: 2}
   onRightMouseUp: {fileID: 11400000, guid: 6ef5a51f20305674e93634442b3b5f74, type: 2}
+--- !u!1 &7739559412225523501
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6396473220596707069}
+  - component: {fileID: 4050300586000718864}
+  - component: {fileID: 1650632065014677145}
+  m_Layer: 0
+  m_Name: ItemListener
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6396473220596707069
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7739559412225523501}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1650632065875906164}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4050300586000718864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7739559412225523501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e882bc90724847f885fe301cff39d5aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 91d63047d4d8c2546b207248489df88b, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1650632065729090450}
+        m_TargetAssemblyTypeName: Weapon, Assembly-CSharp
+        m_MethodName: AddAttackSpeed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1650632065014677145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7739559412225523501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e882bc90724847f885fe301cff39d5aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: fee108baecea6c94184848c48b86fd34, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1650632065729090450}
+        m_TargetAssemblyTypeName: Weapon, Assembly-CSharp
+        m_MethodName: AddDamage
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
