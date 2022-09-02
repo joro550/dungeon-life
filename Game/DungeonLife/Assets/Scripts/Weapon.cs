@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using Event.Events;
 
 public class Weapon : MonoBehaviour
 {
@@ -35,4 +34,10 @@ public class Weapon : MonoBehaviour
     
     public void FixedUpdate() 
         => transform.RotateAround(rotateAround.position, _rotation, Time.deltaTime * (weaponConfig.speed * 100));
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.TryGetComponent<DamageTaker>(out var damageTaker))
+            damageTaker.TakeDamage(weaponConfig.damage);
+    }
 }

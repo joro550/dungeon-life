@@ -9,8 +9,15 @@ public class EnemyHealth : MonoBehaviour
     public void Awake() 
         => current = max;
 
-    public void RemoveHealth(WeaponConfig damageDoneEvent) 
-        => current -= damageDoneEvent.damage;
+    public void RemoveHealth(float damageDoneEvent)
+    {
+        current -= damageDoneEvent;
+
+        if (current <= 0) OnDeath();
+    }
+
+    private void OnDeath() 
+        => Destroy(gameObject);
 
     public string GetValue() => current.ToString(CultureInfo.InvariantCulture);
 }
