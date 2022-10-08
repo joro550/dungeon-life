@@ -10,6 +10,14 @@ public class Testing : MonoBehaviour
         var transformEulerAngles = GetAngle(vector, transform);
         transform.eulerAngles = new Vector3(0, 0, transformEulerAngles);
     }
+
+    public void OnAttack()
+    {
+        var rb = GetComponent<Rigidbody2D>();
+        rb.constraints = RigidbodyConstraints2D.None;
+        
+        rb.AddForce(transform.forward * 100, ForceMode2D.Impulse);
+    }
     
     private float GetAngle(Vector2 mousePosition, Transform weapon)
     {
