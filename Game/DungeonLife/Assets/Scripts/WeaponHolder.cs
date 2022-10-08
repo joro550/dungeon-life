@@ -6,6 +6,7 @@ public class WeaponHolder : MonoBehaviour
     [SerializeField] private Transform weapon;
     [SerializeField] private Transform parent;
     [SerializeField] private Transform weaponPrefab;
+    [SerializeField] private float throwSpeed = 1.3f;
     private Vector2 mousePosition = Vector2.zero;
 
     public void OnMousePosition(InputValue inputValue)
@@ -25,13 +26,13 @@ public class WeaponHolder : MonoBehaviour
         //     weapon2.Attack(mousePosition);
         
         var prefabTransform = Instantiate(weaponPrefab, transform.position, Quaternion.identity);
-        var shootingDirection = new Vector2(mousePosition.x, mousePosition.y);
+        var shootingDirection = new Vector2(mousePosition.x, mousePosition.y).normalized;
         var shootingRotation = Mathf.Atan2(shootingDirection.y, shootingDirection.x) * Mathf.Rad2Deg;
         
         var weapon = prefabTransform.GetComponentInChildren<Weapon2>();
         var prefabRigidBody = prefabTransform.GetComponentInChildren<Rigidbody2D>();
 
-        prefabRigidBody.velocity = shootingDirection * weapon.GetThrowSpeed();
+        prefabRigidBody.velocity = shootingDirection * throwSpeed * weapon.GetThrowSpeed();
         prefabTransform.transform.Rotate(new Vector3(0, 0, shootingRotation));
         Destroy(prefabTransform.gameObject, 1.3f);
     }
