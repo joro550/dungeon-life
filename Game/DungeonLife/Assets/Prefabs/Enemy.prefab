@@ -347,6 +347,7 @@ GameObject:
   - component: {fileID: 2345162228583675730}
   - component: {fileID: 2345162228583675732}
   - component: {fileID: 635498085}
+  - component: {fileID: 530905092}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -386,6 +387,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   max: 100
   current: 0
+  OnDeathEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 530905092}
+        m_TargetAssemblyTypeName: DropTable, Assembly-CSharp
+        m_MethodName: GetDrop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!60 &2345162228583675758
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -566,6 +582,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bebb2a7a22994a62848ee099e486d623, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &530905092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2345162228583675753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c8f83518eda4d31b6caae9650342b25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropType:
+  - chance: 100
+    item: {fileID: 3202244077792861455, guid: fd84cac2fb982ea4c836a7a1502dc1ef, type: 3}
 --- !u!1 &2345162229332686872
 GameObject:
   m_ObjectHideFlags: 0

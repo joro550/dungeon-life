@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 3202244077792861455}
   - component: {fileID: 3202244077792861442}
   - component: {fileID: 3202244077792861443}
-  - component: {fileID: 3202244077792861444}
+  - component: {fileID: 8660189759046230264}
   m_Layer: 0
   m_Name: AttackSpeedPotion
   m_TagString: Untagged
@@ -181,7 +181,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &3202244077792861444
+--- !u!114 &8660189759046230264
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -190,16 +190,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 3202244077792861454}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2397c0a248b41f1b942a7791b2a05f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 0c4955db1f0b4642ac0c2f3bdc201da3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onCollisionWith: {fileID: 0}
-  onCollisionEntered: {fileID: 11400000, guid: 91d63047d4d8c2546b207248489df88b, type: 2}
+  layer:
+    serializedVersion: 2
+    m_Bits: 2048
   onCollision:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3202244077792861444}
-        m_TargetAssemblyTypeName: CollisionScript, Assembly-CSharp
+      - m_Target: {fileID: 8660189759046230264}
+        m_TargetAssemblyTypeName: CollisionWithLayer, Assembly-CSharp
         m_MethodName: DestroyGameObject
         m_Mode: 1
         m_Arguments:
@@ -210,3 +211,4 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onCollisionEntered: {fileID: 11400000, guid: 91d63047d4d8c2546b207248489df88b, type: 2}
