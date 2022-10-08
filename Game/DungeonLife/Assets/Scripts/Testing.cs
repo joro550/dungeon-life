@@ -3,22 +3,22 @@ using UnityEngine.InputSystem;
 
 public class Testing : MonoBehaviour
 {
-    public void OnMousePosition(InputValue inputValue)
-    {
-        var vector = inputValue.Get<Vector2>();
+    [SerializeField] private float strength = 0.2f;
+    private Vector2 vector;
 
-        var transformEulerAngles = GetAngle(vector, transform);
-        transform.eulerAngles = new Vector3(0, 0, transformEulerAngles);
-    }
+    public void OnMousePosition(InputValue inputValue) => vector = inputValue.Get<Vector2>();
 
     public void OnAttack()
     {
         var rb = GetComponent<Rigidbody2D>();
         rb.constraints = RigidbodyConstraints2D.None;
-        
-        rb.AddForce(transform.forward * 100, ForceMode2D.Impulse);
+
+        var shootingDirection = new Vector2(vector.x, vector.y);
+        var shootingRotation = Mathf.Atan2(vector.y, vector.x) * Mathf.Rad2Deg;
+        rb.velocity = shootingDirection * strength;
+        transform.Rotate(0, 0, shootingRotation);
     }
-    
+
     private float GetAngle(Vector2 mousePosition, Transform weapon)
     {
         var worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
