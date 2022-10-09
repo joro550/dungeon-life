@@ -19,4 +19,7 @@ public class EnemyCounter : MonoBehaviour
         if(enemies  <= 0)
             allEnemiesDead?.Raise();
     }
+
+    public void AddEnemies(int amount) 
+        => enemies += amount;
 }

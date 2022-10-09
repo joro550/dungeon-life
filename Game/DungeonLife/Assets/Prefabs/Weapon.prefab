@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 6999163377976090609}
   - component: {fileID: 7981683912521245256}
   - component: {fileID: 3009904159145192700}
-  - component: {fileID: 8163012278869911608}
+  - component: {fileID: 4562473963618369587}
   m_Layer: 10
   m_Name: Weapon
   m_TagString: Weapon
@@ -154,7 +154,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &8163012278869911608
+--- !u!60 &4562473963618369587
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,27 +164,24 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.5250977, y: 0.10748388}
-      - {x: 0.23007585, y: 0.25667796}
-      - {x: 0.074225545, y: 0.25829276}
-      - {x: 0.071011156, y: 0.20282811}
-      - {x: -0.43722516, y: 0.17611003}
-      - {x: -0.50814354, y: 0.11128646}
-      - {x: -0.48737672, y: -0.19400637}
-      - {x: 0.07143911, y: -0.24327792}
-      - {x: 0.52187645, y: -0.17768185}
+    - - {x: 0.23898315, y: 0.24985835}
+      - {x: -0.47661087, y: 0.19373345}
+      - {x: -0.48636705, y: -0.22869515}
+      - {x: 0.25529435, y: -0.25138968}
+      - {x: 0.51476276, y: -0.11862114}
+      - {x: 0.519559, y: 0.07003392}

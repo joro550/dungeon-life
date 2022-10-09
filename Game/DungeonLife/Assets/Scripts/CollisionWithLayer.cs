@@ -1,7 +1,6 @@
-﻿using Event.Events;
+﻿using UnityEngine;
+using Event.Events;
 using Event.UnityEvents;
-using UnityEngine;
-using UnityEngine.Events;
 
 public class CollisionWithLayer : MonoBehaviour
 {

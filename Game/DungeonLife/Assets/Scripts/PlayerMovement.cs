@@ -30,17 +30,17 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool(IsWalking, false);
         }
 
-        if (targetSpeed.x < 0)
-        {
-            body.Rotate(new Vector3(0, 0, 0), 180);
-        }
-
-        // spriteRenderer.flipX = targetSpeed.x switch
+        // if (targetSpeed.x < 0)
         // {
-        //     < 0 => true,
-        //     > 0 => false,
-        //     _ => spriteRenderer.flipX
-        // };
+        //     body.Rotate(new Vector3(0, 0, 0), 180);
+        // }
+
+        spriteRenderer.flipX = targetSpeed.x switch
+        {
+            < 0 => true,
+            > 0 => false,
+            _ => spriteRenderer.flipX
+        };
 
         var deltaSpeed = targetSpeed * speed * Time.deltaTime;
         if(deltaSpeed != Vector3.zero)
