@@ -12,7 +12,7 @@ public class EnemySpawn : MonoBehaviour
 
     public void Spawn()
     {
-        var worldPosition = transform.TransformPoint(transform.position);
+        var worldPosition = transform.parent.TransformPoint(transform.localPosition);;
         var enemiesToSpawn = Random.Range(minEnemiesToSpawn, maxEnemiesToSpawn + 1);
 
         var (minX, maxX) = (worldPosition.x - radius, worldPosition.x + radius);
@@ -20,8 +20,7 @@ public class EnemySpawn : MonoBehaviour
         
         for (var i = 0; i < enemiesToSpawn; i++)
         {
-            var x = Random.Range(minX, maxX);
-            var y = Random.Range(minY, maxY);
+            var (x, y) = (Random.Range(minX, maxX), Random.Range(minY, maxY));
             
             var random = new Vector3(x, y);
             Instantiate(enemyPrefab, random, Quaternion.identity);

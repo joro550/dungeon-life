@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 735d23c361de4670a0722ca86b3b2cdd, type: 3}
   m_Name: RoomChange
   m_EditorClassIdentifier: 
-  Value: {fileID: 0}
+  Value: {fileID: 8639646814920923494, guid: 9f7349c02f846894daab933a36c0154a, type: 3}
