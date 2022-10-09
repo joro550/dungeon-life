@@ -3,48 +3,33 @@ using UnityEngine.InputSystem;
 
 public class WeaponHolder : MonoBehaviour
 {
-    [SerializeField] private Transform weapon;
-    [SerializeField] private Transform parent;
     [SerializeField] private Transform weaponPrefab;
-    [SerializeField] private float throwSpeed = 1.3f;
-    private Vector2 mousePosition = Vector2.zero;
+    [SerializeField] private float throwTime = 1.3f;
+    [SerializeField] private float throwSpeed = 3f;
 
-    public void OnMousePosition(InputValue inputValue)
-    {
-        mousePosition = inputValue.Get<Vector2>();
-        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        
-        // var weapon2 = GetComponentInChildren<Weapon2>();
-        // if(weapon2 != null)
-        //     weapon2.Rotate(GetAngle());
-    }
+    private Vector2 movement = Vector2.zero;
 
+    // ReSharper disable once UnusedMember.Global
+    public void OnMovement(InputValue inputValue) => movement = inputValue.Get<Vector2>();
+
+    // ReSharper disable once UnusedMember.Global
     public void OnAttack()
     {
-        // var weapon2 = GetComponentInChildren<Weapon2>();
-        // if(weapon2  != null)
-        //     weapon2.Attack(mousePosition);
-        
         var prefabTransform = Instantiate(weaponPrefab, transform.position, Quaternion.identity);
-        var shootingDirection = new Vector2(mousePosition.x, mousePosition.y).normalized;
-        var shootingRotation = Mathf.Atan2(shootingDirection.y, shootingDirection.x) * Mathf.Rad2Deg;
+
+        var mousePosition = Mouse.current.position.ReadValue();
+        var mouseWorldPosition = Camera.main.ScreenToWorldPoint(mousePosition).normalized;
+
+        var position = new Vector2(mousePosition.x, mousePosition.y);
+        var shootingRotation = Mathf.Atan2(mouseWorldPosition.y, mouseWorldPosition.x) * Mathf.Rad2Deg;
         
-        var weapon = prefabTransform.GetComponentInChildren<Weapon2>();
+        var weapon = prefabTransform.GetComponentInChildren<WeaponThrow>();
         var prefabRigidBody = prefabTransform.GetComponentInChildren<Rigidbody2D>();
 
-        prefabRigidBody.velocity = shootingDirection * throwSpeed * weapon.GetThrowSpeed();
+        prefabRigidBody.velocity = mouseWorldPosition * 1.5f;
         prefabTransform.transform.Rotate(new Vector3(0, 0, shootingRotation));
-        Destroy(prefabTransform.gameObject, 1.3f);
+        Destroy(prefabTransform.gameObject, throwTime);
     }
 
-    private float GetAngle()
-    {
-        var worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        var direction = (worldPosition - weapon.position).normalized;
-        var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        return angle;
-    }
-
-    public Transform GetParent() => parent;
-    public bool HasWeapon() => GetComponentInChildren<Weapon2>() != null;
+    public bool HasWeapon() => GetComponentInChildren<WeaponThrow>() != null;
 }

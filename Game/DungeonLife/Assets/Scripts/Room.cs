@@ -7,10 +7,9 @@ public class Room : MonoBehaviour
 
     public void Activate(GameObject player)
     {
+        gameObject.SetActive(true);
         player.transform.position = playerStart.position;
-        var transformPosition = Camera.main.transform.position;
-        Camera.main.transform.position =
-            new Vector3(transformPosition.x, cameraPosition.position.y, transformPosition.z);
-
     }
+
+    public Transform GetCameraLocation() => cameraPosition;
 }

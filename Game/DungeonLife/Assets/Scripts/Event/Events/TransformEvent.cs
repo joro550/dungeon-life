@@ -2,7 +2,7 @@
 
 namespace Event.Events
 {
-    [CreateAssetMenu(fileName = "Float Event", menuName = "Game Event/Float")]
+    [CreateAssetMenu(fileName = "Transform Event", menuName = "Game Event/Transform")]
     public class TransformEvent : BaseGameEvent<Transform>
     {
         public Transform Value;

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Weapon : MonoBehaviour
+public class WeaponSpin : MonoBehaviour
 {
     [SerializeField] private Transform rotateAround;
     [SerializeField] private WeaponConfig weaponConfig;

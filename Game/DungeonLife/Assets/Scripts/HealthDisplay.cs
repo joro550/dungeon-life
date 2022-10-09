@@ -3,7 +3,7 @@
 public class HealthDisplay : MonoBehaviour
 {
     [SerializeField] private TMPro.TMP_Text text;
-    [SerializeField] private EnemyHealth health; 
+    [SerializeField] private Health health; 
     
     public void Update()
     {

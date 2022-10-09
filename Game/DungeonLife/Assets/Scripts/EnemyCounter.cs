@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class EnemyCounter : MonoBehaviour
 {
-    private int enemies;
+    [SerializeField] private int enemies;
     [SerializeField] private VoidEvent allEnemiesDead;
 
     private void Start()
     {
-        var findObjectOfType = FindObjectsOfType<EnemyHealth>();
+        var findObjectOfType = FindObjectsOfType<DropTable>();
         enemies = findObjectOfType.Length;
     }
 

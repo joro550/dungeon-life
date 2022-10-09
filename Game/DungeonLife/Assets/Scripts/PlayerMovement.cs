@@ -16,11 +16,7 @@ public class PlayerMovement : MonoBehaviour
         => _rigidbody2D = GetComponent<Rigidbody2D>();
 
     // ReSharper disable once UnusedMember.Global
-    public void OnMovement(InputValue inputValue)
-    {
-        // Debug.Log(inputValue);
-        input = inputValue.Get<Vector2>();
-    }
+    public void OnMovement(InputValue inputValue) => input = inputValue.Get<Vector2>();
 
     public void FixedUpdate()
     {
@@ -33,22 +29,18 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool(IsWalking, false);
         }
-        
-        // if (horizontal < 0)
+
+        if (targetSpeed.x < 0)
+        {
+            body.Rotate(new Vector3(0, 0, 0), 180);
+        }
+
+        // spriteRenderer.flipX = targetSpeed.x switch
         // {
-        //     body.transform.Rotate(0, 180, 0, Space.Self);
-        // }
-        // else if (horizontal > 0)
-        // {
-        //     body.transform.Rotate(0, 0, 0, Space.Self);
-        // }
-        //
-        // // spriteRenderer.flipX = horizontal switch
-        // // {
-        // //     < 0 => true,
-        // //     > 0 => false,
-        // //     _ => spriteRenderer.flipX
-        // // };
+        //     < 0 => true,
+        //     > 0 => false,
+        //     _ => spriteRenderer.flipX
+        // };
 
         var deltaSpeed = targetSpeed * speed * Time.deltaTime;
         if(deltaSpeed != Vector3.zero)
