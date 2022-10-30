@@ -1,5 +1,6 @@
 using JetBrains.Collections.Viewable;
 using JetBrains.Lifetimes;
+using JetBrains.RiderFlow.Core.Analytics;
 using JetBrains.RiderFlow.Core.Launchers;
 using JetBrains.RiderFlow.Core.ReEditor.Notifications;
 using JetBrains.RiderFlow.Core.Requirements;
@@ -84,6 +85,7 @@ namespace JetBrains.RiderFlow.Since2021_2
                 if (toolbox.displayed)
                     return;
                 
+                RiderFlowAnalytics.LogEvent(AnalyticsConstants.SpawnToolbarNew);
                 toolbox.collapsed = false;
                 toolbox.displayed = true;
                 toolbox.Undock();
